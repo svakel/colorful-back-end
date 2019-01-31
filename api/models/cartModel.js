@@ -6,9 +6,32 @@ const Schema = mongoose.Schema;
 
 const CartSchema = new Schema({
       cart_id: {
-        type: String,
+        type: Number,
         required: ''
-      }
+      },
+
+      cartTotalPrice: {
+        type: Number,
+        required: ''
+      },
+
+      inCart: [{
+        product_id: {
+          type: Number,
+          required: ''
+        },
+
+        quantity: {
+          type: Number,
+          required: ''
+        },
+  
+        productTotalPrice: {
+          type: Number,
+          required: ''
+        }
+      }]
+
     });
 
 module.exports = mongoose.model('Cart', CartSchema);

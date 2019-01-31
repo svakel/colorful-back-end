@@ -27,8 +27,6 @@ const cartsRoutes = require('./api/routes/cartRoutes'); //importing route
 routes(app); // register the route
 cartsRoutes(app);
 
-// const cartRoutes = require('./api/routes/cartRoutes');
-// cartRoutes(app);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)

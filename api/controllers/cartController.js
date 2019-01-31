@@ -1,23 +1,9 @@
 // 'use strict';
 
-// const mongoose = require('mongoose'),
-//     Cart = mongoose.model('Cart');
-
-// exports.list_all = function (req, res) {
-//     console.log("kukkuu")
-//     Cart.find({}, function(err, cartProduct) {
-//         console.log("toimiiko", cartProduct)
-//         if (err)
-//             res.send(err);
-//         res.json(cartProduct);
-//     });
-// };
-
 const mongoose = require('mongoose'),
     Cart = mongoose.model('Cart');
 
 exports.list_all = function (req, res) {
-    console.log('kukkuu')
     Cart.find({}, function(err, cart) {
         console.log(cart)
         if (err)
@@ -37,7 +23,7 @@ exports.create_a_cart = function(req, res) {
 
 exports.read_a_cart = function(req, res) {
 
-    Cart.findById(req.params.cart_id, function(err, cart) {
+    Cart.findById(req.params.cartId, function(err, cart) {
       if (err)
         res.send(err);
       res.json(cart);
@@ -45,7 +31,7 @@ exports.read_a_cart = function(req, res) {
   };
 
 exports.update_a_cart = function(req, res) {
-    Cart.findOneAndUpdate({id: req.params.cart_id}, req.body, {new: true}, function(err, cart){
+    Cart.findOneAndUpdate({id: req.params.cartId}, req.body, {new: true}, function(err, cart){
         if (err)
             res.send(err);
         res.json(cart);
@@ -54,7 +40,7 @@ exports.update_a_cart = function(req, res) {
 
 exports.delete_a_cart = function(req, res) {
     Color.remove({
-        _id: req.params.taskId},
+        _id: req.params.cartId},
         function(err, cart) {
             if (err)
                 res.send(err);

@@ -9,7 +9,7 @@ app.route('/cart')
      .post(carts.create_a_cart);
 
 
-app.route('/cart/:cart_id')
+app.route('/cart/:cartId')
     .get(carts.read_a_cart)
     .put(carts.update_a_cart)
     .delete(carts.delete_a_cart);

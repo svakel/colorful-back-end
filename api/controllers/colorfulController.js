@@ -21,7 +21,7 @@ exports.create_a_color = function(req, res) {
 };
 
 exports.read_a_color = function(req, res) {
-    Color.findById(req.params.product_id, function(err, color) {
+    Color.findById(req.params.colorId, function(err, color) {
       if (err)
         res.send(err);
       res.json(color);
@@ -38,7 +38,7 @@ exports.update_a_color = function(req, res) {
 
 exports.delete_a_color = function(req, res) {
     Color.remove({
-        _id: req.params.taskId},
+        _id: req.params.colorId},
         function(err, color) {
             if (err)
                 res.send(err);

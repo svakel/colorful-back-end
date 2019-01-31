@@ -14,7 +14,7 @@ const ColorSchema = new Schema({
         required: ''
       },
       price: {
-        type: String,
+        type: Number,
         required: ''
       },
       description: {
